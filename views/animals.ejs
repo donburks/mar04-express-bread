@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animals</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Animals</h1>
+    <a href="/animals/new" title="Add Animal">Add Animal</a>
+    <main>
+    <% db.forEach(animal => { %>
+    <section>
+      <header><%= animal.name %></header>
+      <article>
+        <%= animal.species %><br />
+        <a href="<%= `/animals/${animal.id}` %>" title="<%= animal.name %>">View</a> | <a href="<%= `/animals/${animal.id}/edit` %>" title="Edit animal">Edit</a> | <a href="<%= `/animals/${animal.id}/delete` %>" title="Delete Animal">Delete</a>
+      </article>
+    </section>
+    <% }) %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Edit <%= animal.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Edit <%= animal.name %></h1>
+    <form method="POST" action="<%= `/animals/${animal.id}/edit` %>">
+      <input type="hidden" name="id" value="<%= animal.id %>" />
+      <label for="name">Name:</label><input type="text" name="name" id="name" placeholder="Enter name..." value="<%= animal.name %>" /><br />
+      <label for="species">Species</label><input type="text" name="species" id="species" placeholder="Enter species..." value="<%= animal.species %>" />
+      <button type="submit">Edit Animal</button>
+    </form>
+  </body>
+</html>
